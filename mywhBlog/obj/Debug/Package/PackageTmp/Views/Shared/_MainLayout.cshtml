@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section csstop{  
+    @RenderSection("csstop", required: false)
+}
+@section css{
+    @RenderSection("css", required: false)
+}
+<!--left-->
+<div class="col-xs-12 col-sm-12 col-md-8" id="left-content">
+    @RenderBody()
+</div>
+<!--right-->
+<div class="col-xs-12 col-md-4 hidden-xs hidden-sm" id="sidebar">
+    @RenderSection("rigthTop", required: false)
+    <dl class="function" id="divHottags">
+        <dt class="function_t">热门话题</dt>
+        <dd class="function_c">
+            <ul id="hotTag">
+                @Html.Action("HotTagList", "Article")
+            </ul>
+        </dd>
+    </dl>
+    <dl class="function" id="divHotpost">
+        <dt class="function_t">热门文章</dt>
+        <dd class="function_c">
+            <div id="cyHotnews" role="cylabs" data-use="hotnews">
+            </div>
+        </dd>
+    </dl>
+    <dl class="function" id="divNewcomm">
+        <dt class="function_t">最新评论</dt>
+        <dd class="function_c">
+            <div id="cyReping" role="cylabs" data-use="reping">
+            </div>
+        </dd>
+    </dl>
+    <dl class="function" id="divReaders">
+        <dt class="function_t">给力访客</dt>
+        <dd class="function_c">
+            <div id="cyHotusers" role="cylabs" data-use="hotusers" style="width:auto;">
+            </div>
+        </dd>
+    </dl>
+</div>
+
+@section scripts{  
+    @RenderSection("scripts", required: false)
+}

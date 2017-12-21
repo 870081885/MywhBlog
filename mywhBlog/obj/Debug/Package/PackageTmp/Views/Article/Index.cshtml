@@ -1,0 +1,195 @@
+﻿@using System.Configuration;
+@model mywhBlog.Models.Base.Paging<mywhBlog.Models.Base.Article>
+@{
+    ViewBag.Title = "梦影雾花 - 个人博客 - 云在青天水在瓶";
+    ViewBag.Keywords = "个人博客,梦影雾花个人博客,技术分享博客,梦影雾花";
+    ViewBag.Description = "梦影雾花个人博客，是博主的个人网站，主要分享一些技术文章，当然也些娱乐八卦，毕竟生活需要多姿多彩。";
+}
+
+@section csstop{
+    @*swiper触摸滑动插件 此页面用于轮播*@
+    <link href="/Content/css/swiper.min.css" rel="stylesheet" type="text/css">
+}
+@section css{
+
+}
+
+<!--swiper-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="javascript:void(0);" title="黄昏">
+
+                <img src="~/Content/images/banner1.jpg" class="img-responsive" alt="黄昏">
+            </a>
+            <p class="lead hidden-xs">黄昏</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="javascript:void(0);" title="饭后甜点">
+                <img src="~/Content/images/banner2.jpg" class="img-responsive" alt="饭后甜点">
+            </a>
+            <p class="lead hidden-xs">饭后甜点</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="javascript:void(0);" title="曲径通幽">
+                <img src="~/Content/images/banner4.jpg" class="img-responsive" alt="曲径通幽">
+            </a>
+            <p class="lead hidden-xs">曲径通幽</p>
+        </div>
+        <div class="swiper-slide">
+            <a href="javascript:void(0);" title="午后小清新">
+                <img src="~/Content/images/banner6.jpg" class="img-responsive" alt="午后小清新">
+            </a>
+            <p class="lead hidden-xs">异域风光</p>
+        </div>
+    </div>
+    <div class="swiper-pagination">
+    </div>
+    <div class="swiper-button-prev swiper-button-white hidden-xs">
+    </div>
+    <div class="swiper-button-next swiper-button-white hidden-xs">
+    </div>
+</div>
+<!--post-istop-->
+<div class="post-istop hidden-xs">
+    <p class="multi">
+        <i class="fa fa-star"></i><span class="title">精选导读</span>
+    </p>
+    <div class="row">
+        <div class="col-xs-4">
+            <div class="istop">
+                <a href="javascript:void(0);" title="大爱胡歌">
+                    <span style="background: url(/Content/images/test1.jpg);background-size: cover; -moz-background-size: cover"></span>
+                </a>
+                <p>
+                    <a href="javascript:void(0);" title="大爱胡歌">大爱</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="istop">
+                <a href="javascript:void(0);" title="大爱胡歌">
+                    <span style="background: url(/Content/images/test3.jpg); background-size: cover; -moz-background-size: cover"></span>
+                </a>
+                <p>
+                    <a href="javascript:void(0);" title="大爱胡歌">胡</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="istop">
+                <a href="javascript:void(0);" title="大爱胡歌">
+                    <span style="background: url(/Content/images/test2.jpg); background-size: cover; -moz-background-size: cover"></span>
+                </a>
+                <p>
+                    <a href="javascript:void(0);" title="大爱胡歌">歌</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--post-multi-->
+<div class="post-multi">
+    <p class="multi">
+        <i class="fa fa-rss"></i><span class="title">最新发布</span>
+    </p>
+    <div id="divLatelyArticle" runat="server">
+        @foreach (var item in Model.list)
+        {
+            <div class="media">
+                <div class="media-left">
+                    <a href="@ConfigurationManager.AppSettings["blogUrl"]/@item.menuKey/@(item.articleId).html" title="@item.title" rel="bookmark">
+                        <img class="media-object" src="@item.img" alt="@item.title">
+                    </a>        
+                </div>
+                <div class="media-body">
+                    <h2 class="media-heading">
+                        <a href="@ConfigurationManager.AppSettings["blogUrl"]/@item.menuKey/@(item.articleId).html" title="@item.title" rel="bookmark">
+                            @item.title
+                        </a>
+                    </h2>
+                    <p class="hidden-xs">@item.introduction</p>
+                    <p class="media-time">
+                        <i class="fa fa-clock-o"></i>&nbsp;@item.createTime&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-eye"></i>&nbsp;@item.browserNum
+                        <span class="hidden-xs">
+                            &nbsp;&nbsp;&nbsp;&nbsp;
+                            <i class="fa fa-commenting-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i>
+                            &nbsp;@item.categoryName
+                        </span>
+                    </p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<!--pagebar-->
+<div class="pagebar">
+    <ul id="divPage"></ul>
+</div>
+
+@section rigthTop{
+    <dl class="function" id="divPromotion">
+        <dt style="display: none;"></dt>
+        <dd class="function_c">
+            <div>
+                <a href="#" rel="nofollow" target="_blank">
+                    <img src="/Content/images/ad.jpg" class="img-responsive" alt="免费网站" />
+                </a>
+            </div>
+        </dd>
+    </dl>
+}
+
+
+@section scripts{
+    @*swiper触摸滑动插件 此页面用于轮播*@
+    <script src="/Scripts/swiper.min.js" type="text/javascript"></script>
+    <script src="/assets/laypage/laypage.js" type="text/javascript"></script>
+    <script src="/assets/paginator/bootstrap-paginator.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            //轮播
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true,
+                prevButton: '.swiper-button-prev',
+                nextButton: '.swiper-button-next',
+                spaceBetween: 0,
+                autoplay: 5000,
+                autoHeight: false,
+                loop: true
+            });
+            getLatelyArticleList(@Html.ViewContext.RouteData.Values["id"]);
+        });
+
+
+        //获取最近文章列表
+        function getLatelyArticleList(curr) {
+            var options = {
+                currentPage: curr||@ViewBag.page,
+                bootstrapMajorVersion: 3,
+                totalPages: @Model.totalPages,
+                pageUrl: function (type, page, current) {
+                    return "@ConfigurationManager.AppSettings["blogUrl"]" + "/index_" + page + ".html";
+                }
+            }
+
+            $("#divPage").bootstrapPaginator(options);
+        }
+
+        ////访问文章
+        //function clickArticle(articleId, menuKey) {
+        //    $.ajax({
+        //        type: "post",
+        //        url: "/ajax/Article.ashx",
+        //        data: { action: 'clickArticle', articleId: articleId },
+        //        async: true,
+        //        success: function (data) {
+        //            var my = eval("(" + data + ")"); 
+        //            window.location.href = "/" + menuKey + "/" + articleId + ".html";
+        //        }
+        //    });
+        //}
+
+    </script>
+}

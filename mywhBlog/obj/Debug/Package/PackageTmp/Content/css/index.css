@@ -1,0 +1,202 @@
+﻿
+body {
+    background: #f2f2f2;
+}
+
+.navbar, .navbar .container .navbar-header {
+    background: #373d41;
+}
+
+@media (min-width:768px) {
+    ul.nav li a {
+        color: #ffffff;
+    }
+
+    ul.nav li:hover a {
+        color: #ffffff;
+    }
+
+    ul.nav ul li a {
+        color: #ffffff !important;
+        background: #373d41;
+    }
+
+        ul.nav ul li a:hover {
+            color: #ffffff !important;
+        }
+
+    ul.nav li a.current-menu-item {
+        color: #ffffff;
+    }
+}
+
+footer {
+    color: #ffffff;
+    background: #505050;
+}
+
+    footer a {
+        color: #ffffff;
+    }
+
+@media (max-width:768px) {
+    .nav li a {
+        color: #ffffff;
+    }
+
+        .nav li a:hover, .nav li:hover a {
+            color: #ffffff;
+        }
+
+    .navbar .navbar-nav a.current-menu-item {
+        color: #ffffff;
+        background-color: #f79646;
+    }
+
+    .navbar .container > .navbar-collapse {
+        background-color: #373d41;
+    }
+}
+
+.swiper-slide p {
+    color: #ffffff;
+    background: #373d41;
+}
+
+.swiper-pagination-bullet {
+    background: #ffffff;
+}
+
+.media-left img {
+    border-radius: 0px;
+    width: 90px;
+    height: auto;
+    max-height: 60px;
+}
+
+@media (min-width:992px) {
+    .media-left img {
+        border-radius: 4px;
+        width: 210px;
+        max-height: 140px;
+    }
+}
+
+@media (min-width:768px) and (max-width:991px) {
+    .media-left img {
+        border-radius: 2px;
+        width: 180px;
+        max-height: 120px;
+    }
+}
+
+@media (min-width:480px) and (max-width:768px) {
+    .media-left img {
+        border-radius: 2px;
+        width: 120px;
+        max-height: 80px;
+    }
+}
+
+#divFollow dd dt img {
+    width: 100px;
+    height: 70px;
+}
+
+.media-three-thumbnail span {
+    padding-bottom: 60%;
+}
+
+.kefu .weibo .kefu-tip {
+    left: -100px;
+    top: 10px;
+}
+
+@media (max-width:768px) {
+    .kefu .weibo .kefu-tip {
+        top: 20px;
+    }
+}
+
+.kefu .weixin .kefu-tip {
+    left: -100px;
+    top: 40px;
+}
+
+@media (max-width:768px) {
+    .kefu .weixin .kefu-tip {
+        top: 40px;
+    }
+}
+
+.kefu .phone .kefu-tip {
+    left: -185px;
+    top: 80px;
+}
+
+@media (max-width:768px) {
+    .kefu .phone .kefu-tip {
+        top: 50px;
+    }
+}
+
+@media (min-width:768px) {
+    #content {
+        margin-top: 80px;
+    }
+}
+
+@media (max-width:767px) {
+    #content {
+        margin-top: 50px;
+    }
+}
+
+::-moz-selection {
+    background: #f79646;
+}
+
+::selection {
+    background: #f79646;
+}
+
+.icon-bar, .nav li a:hover, .nav li a:focus, ul.nav li:hover, .current-menu-item, ul.nav ul li a:hover, .form-text.form-input, .swiper-pagination-bullet-active, .post-istop .istop:hover, .media-heading span, .media-left span, #my-gallery-container .item dt span, .pagebar a:focus, .pagebar a:hover, .comment-pagebar a:focus, .comment-pagebar a:hover, .pagebar .now-page, .comment-pagebar .now-page, .mutuality .mutuality-pic:hover, .comment-form input[type='submit'], .comment-form input[type='submit']:hover, .list-group .active, .list-group .active:hover, .list-group .active:focus, #divSearchPanel form input[type='submit'] {
+    background: #f79646;
+}
+
+a, a:hover, a:focus, .searchform_button, .login_button, .multi i, .post-multi .post-article i, .post-multi .photo-title a:hover, .post-multi .photo-title a:focus, .media-heading a:hover, #divPrevious li a:hover, #divPrevious li a:focus, #divComments li a:hover, #divComments li a:focus, #divNewpost li a:hover, #divNewpost li a:focus, #divGuess li a:hover, #divGuess li a:focus, #divHotpost li a:hover, #divHotpost li a:focus, #divNewcomm dd span, #divReaders a:hover, #divReaders a:focus, .links .links-txt li a:hover, .single-tags li a, .comments-title i, .comments-title small, .post-comment .comment-title i, .post-comment .comment-title a, div.go-top:hover, .error-404, .sitecolor, #sidebar .function_t:before, #comment-tools a:hover, .kefu .phone .phones a, .kefu .phone .phones a:hover, .kefu .phone .phones a:focus {
+    color: #f79646;
+}
+
+.post-multi .post-article:hover {
+    border-left: 3px solid #f79646;
+}
+
+#divHottags li a:hover, #divHottags li a:focus, .single-tags li a:hover, .single-tags li a:focus, #divTags li a:hover, #divTags li a:focus {
+    border: 1px #f79646 solid;
+    background: #f79646;
+}
+
+.post-single pre, .article-content h2, .article-content h3, .article-content h4, .article-content h5, .article-content h6 {
+    border-left: 4px solid #f79646;
+}
+
+
+
+/*热评用户*/
+#cyHotusers li {
+    box-sizing: content-box;
+}
+
+#cyHotusers {
+    width: auto;
+    margin-left: 0px;
+}
+
+    #cyHotusers .hotusers-list-item {
+        border-bottom: none;
+    }
+
+    #cyHotusers .hotusers-header {
+        display: none;
+    }

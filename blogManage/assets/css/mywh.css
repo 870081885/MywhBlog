@@ -1,0 +1,125 @@
+﻿/* 图片上传 */
+.Thumblistbg
+{
+    display: inline-block;
+    border: 1px solid #d8d8d8;
+    background: #fff;
+    padding: 2px;
+    width: 217px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    background: url(../images/img-hui.jpg) 2px 2px no-repeat #fff;
+}
+.Thumblistbg #fileImage
+{
+    opacity: 0;
+    position: absolute;
+    background: #313541;
+    width: 109px;
+    height: 31px;
+    line-height: 31px;
+    color: #fff;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    left: 50%;
+    margin-left: -54px;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 9;
+    cursor: pointer;
+    font-size: 0;
+}
+.Thumblistbg .Thumbbtn
+{
+    display: block;
+    position: absolute;
+    background: #313541;
+    width: 109px;
+    height: 31px;
+    line-height: 31px;
+    color: #fff;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    left: 50%;
+    margin-left: -54px;
+    top: 50%;
+    margin-top: -15px;
+    z-index: 3;
+    cursor: pointer;
+}
+.Thumblistbg .Thumbbtn i
+{
+    float: left;
+    display: block;
+    width: 16px;
+    height: 14px;
+    margin: 9px 6px 0 14px;
+}
+.Thumblistbg a
+{
+    text-decoration: none;
+}
+.Thumblistbg
+{
+    font: 14px 'Microsoft Yahei' , tahoma, Srial, helvetica, sans-serif;
+}
+
+/* 图片删除 */
+.Thumblist
+{
+    display: inline;
+}
+.Thumb_li
+{
+    border: 1px solid #d8d8d8;
+    background: #fff;
+    float: left;
+    padding: 2px;
+    width: 217px;
+    height: 150px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 3%;
+    margin-bottom: 15px;
+}
+.Thumb_li img
+{
+    width: 100%;
+    text-align: center;
+}
+.Thumb_li .bg
+{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,0.5);
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#77000000', endColorstr='#77000000')";
+    width: 100%;
+    height: 100%;
+}
+.Thumb_li .bg a
+{
+    display: block;
+    width: 109px;
+    height: 31px;
+    background: #f23e47;
+    text-align: center;
+    line-height: 31px;
+    color: #fff;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    position: absolute;
+    left: 50%;
+    margin-left: -54px;
+    top: 50%;
+    margin-top: -15px;
+}
+.Thumb_li .bg a:hover
+{
+    opacity: 0.9;
+}

@@ -1,0 +1,1074 @@
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7FE6B95F-D584-4933-B3C6-53EFFD5D3A2A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>blogManage</RootNamespace>
+    <AssemblyName>blogManage</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.JScript" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Utility\dll\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\plugins\ueditor\ueditor.config.js" />
+    <Content Include="assets\plugins\zyupload\skins\images\add_img.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\bg.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\close.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\del.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\delete_blue.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\delete_white.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\edit.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\edit_blue.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\edit_white.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\file.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\pdf.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\ppt.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\psd.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\rar.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\swf.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\ttf.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\txt.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\xls.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\fileType\zip.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\finish.png" />
+    <Content Include="assets\plugins\zyupload\skins\images\Jcrop.gif" />
+    <Content Include="assets\plugins\zyupload\skins\images\loading.gif" />
+    <Content Include="assets\plugins\zyupload\skins\images\success.png" />
+    <Content Include="assets\plugins\zyupload\skins\zyupload-1.0.0.css" />
+    <Content Include="assets\plugins\zyupload\skins\zyupload-1.0.0.min.css" />
+    <Content Include="assets\plugins\zyupload\zyupload-1.0.0.js" />
+    <Content Include="assets\plugins\zyupload\zyupload-1.0.0.min.js" />
+    <Content Include="assets\plugins\zyupload\zyupload.basic-1.0.0.js" />
+    <Content Include="assets\plugins\zyupload\zyupload.basic-1.0.0.min.js" />
+    <Content Include="assets\plugins\zyupload\zyupload.drag-1.0.0.js" />
+    <Content Include="assets\plugins\zyupload\zyupload.drag-1.0.0.min.js" />
+    <Content Include="assets\plugins\zyupload\zyupload.tailor-1.0.0.js" />
+    <Content Include="assets\plugins\zyupload\zyupload.tailor-1.0.0.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="packages.config" />
+    <Content Include="ajax\Article.ashx" />
+    <Content Include="ajax\Common.ashx" />
+    <Content Include="ajax\Config.ashx" />
+    <Content Include="ajax\Upload.ashx" />
+    <Content Include="ajax\User.ashx" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="assets\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap.css.map" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="assets\plugins\DataTables\images\Sorting icons.psd" />
+    <Content Include="assets\plugins\iCheck\demo\css\custom.styl" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-bold.eot" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-bold.ttf" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-bold.woff" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-regular.eot" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-regular.ttf" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-regular.woff" />
+    <Content Include="assets\plugins\tagEditor\bower.json" />
+    <Content Include="assets\plugins\tagEditor\readme.md" />
+    <Content Include="assets\plugins\tagEditor\tag-editor.jquery.json" />
+    <Content Include="assets\plugins\ueditor\net\config.json" />
+    <Content Include="assets\plugins\ueditor\net\controller.ashx" />
+    <Content Include="assets\plugins\ueditor\net\README.md" />
+    <Content Include="assets\plugins\ueditor\net\Web.config" />
+    <Content Include="assets\plugins\ueditor\third-party\jquery-1.10.2.min.map" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\font\vjs.eot" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\font\vjs.ttf" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\font\vjs.woff" />
+    <Content Include="assets\plugins\umeditor\net\getContent.ashx" />
+    <Content Include="assets\plugins\umeditor\net\imageUp.ashx" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.eot" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.ttf" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.woff" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.eot" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.ttf" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.woff" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.eot" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.ttf" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.woff" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.eot" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.ttf" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.woff" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\Symbola.eot" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\Symbola.otf" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\Symbola.ttf" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\Symbola.woff" />
+    <Content Include="assets\plugins\zTree\css\awesomeStyle\awesome.less" />
+    <Content Include="assets\plugins\zTree\css\awesomeStyle\fa.less" />
+    <Content Include="baseClass\BaseAshx.ashx" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="articleManage\articleAdd.aspx" />
+    <Content Include="articleManage\articleList.aspx" />
+    <Content Include="articleManage\categoryAdd.aspx" />
+    <Content Include="articleManage\categoryList.aspx" />
+    <Content Include="assets\css\jq22.css" />
+    <Content Include="assets\css\mywh.css" />
+    <Content Include="assets\css\supersized.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.css" />
+    <Content Include="assets\font-awesome\css\font-awesome.min.css" />
+    <Content Include="assets\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="assets\images\img-hui.jpg" />
+    <Content Include="assets\images\loginImg1.jpg" />
+    <Content Include="assets\images\loginImg2.jpg" />
+    <Content Include="assets\images\loginImg3.jpg" />
+    <Content Include="assets\images\logo-touming.png" />
+    <Content Include="assets\images\logo.png" />
+    <Content Include="assets\images\owl-login%402x.png" />
+    <Content Include="assets\images\owl-login-arm%402x.png" />
+    <Content Include="assets\images\owl-login-arm.png" />
+    <Content Include="assets\images\owl-login.png" />
+    <Content Include="assets\images\ph-owl-arm%402x.png" />
+    <Content Include="assets\images\ph-owl-arm.png" />
+    <Content Include="assets\images\ph-owl-arml%402x.png" />
+    <Content Include="assets\images\ph-owl-arml.png" />
+    <Content Include="assets\images\signup-arm%402x.png" />
+    <Content Include="assets\images\signup-arm.png" />
+    <Content Include="assets\inspinia\css\animate.css" />
+    <Content Include="assets\inspinia\css\bootstrap.min.css" />
+    <Content Include="assets\inspinia\css\patterns\header-profile-skin-1.png" />
+    <Content Include="assets\inspinia\css\patterns\header-profile-skin-11.png" />
+    <Content Include="assets\inspinia\css\patterns\header-profile-skin-2.png" />
+    <Content Include="assets\inspinia\css\patterns\header-profile-skin-3.png" />
+    <Content Include="assets\inspinia\css\patterns\header-profile-skin-4.png" />
+    <Content Include="assets\inspinia\css\patterns\header-profile-skin-44.png" />
+    <Content Include="assets\inspinia\css\patterns\shattered.png" />
+    <Content Include="assets\inspinia\css\style.css" />
+    <Content Include="assets\inspinia\css\toastr.min.css" />
+    <Content Include="assets\inspinia\js\inspinia.js" />
+    <Content Include="assets\js\ajaxfileupload.js" />
+    <Content Include="assets\js\common.js" />
+    <Content Include="assets\js\GetQueryString.js" />
+    <Content Include="assets\js\jquery-2.1.1.js" />
+    <Content Include="assets\js\jquery-ui.min.js" />
+    <Content Include="assets\js\jquery.cookie.js" />
+    <Content Include="assets\js\jquery.min.js" />
+    <Content Include="assets\js\mywh.js" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="assets\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="assets\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="assets\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="assets\plugins\bootstrap\js\npm.js" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.foundation.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.material.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.material.min.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.uikit.css" />
+    <Content Include="assets\plugins\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="assets\plugins\DataTables\css\jquery.dataTables.css" />
+    <Content Include="assets\plugins\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="assets\plugins\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="assets\plugins\DataTables\images\favicon.ico" />
+    <Content Include="assets\plugins\DataTables\images\sort_asc.png" />
+    <Content Include="assets\plugins\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="assets\plugins\DataTables\images\sort_both.png" />
+    <Content Include="assets\plugins\DataTables\images\sort_desc.png" />
+    <Content Include="assets\plugins\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.bootstrap.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.bootstrap.min.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.bootstrap4.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.foundation.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.foundation.min.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.jqueryui.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.jqueryui.min.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.material.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.material.min.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.semanticui.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.semanticui.min.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.uikit.js" />
+    <Content Include="assets\plugins\DataTables\js\dataTables.uikit.min.js" />
+    <Content Include="assets\plugins\DataTables\js\jquery.dataTables.js" />
+    <Content Include="assets\plugins\DataTables\js\jquery.dataTables.min.js" />
+    <Content Include="assets\plugins\DataTables\js\jquery.js" />
+    <Content Include="assets\plugins\DataTables\language.txt" />
+    <Content Include="assets\plugins\iCheck\demo\css\banner.jpg" />
+    <Content Include="assets\plugins\iCheck\demo\css\custom.css" />
+    <Content Include="assets\plugins\iCheck\demo\css\icheck.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\arrow-bottom.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\arrow-top.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\header-line.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\icon-fork.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\icon-github.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\icon-lab.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\icon-options.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\ie\icon-star.png" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-bold.svg" />
+    <Content Include="assets\plugins\iCheck\demo\css\montserrat-regular.svg" />
+    <Content Include="assets\plugins\iCheck\demo\css\normalize.css" />
+    <Content Include="assets\plugins\iCheck\demo\index.html" />
+    <Content Include="assets\plugins\iCheck\demo\js\custom.js" />
+    <Content Include="assets\plugins\iCheck\demo\js\custom.min.js" />
+    <Content Include="assets\plugins\iCheck\demo\js\jquery.js" />
+    <Content Include="assets\plugins\iCheck\demo\js\zepto.js" />
+    <Content Include="assets\plugins\iCheck\icheck.js" />
+    <Content Include="assets\plugins\iCheck\icheck.min.js" />
+    <Content Include="assets\plugins\iCheck\skins\all.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\aero%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\aero.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\aero.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\blue%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\blue.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\blue.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\flat%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\flat.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\flat.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\green%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\green.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\green.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\grey%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\grey.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\grey.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\orange%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\orange.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\orange.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\pink%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\pink.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\pink.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\purple%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\purple.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\purple.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\red%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\red.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\red.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\yellow%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\yellow.css" />
+    <Content Include="assets\plugins\iCheck\skins\flat\yellow.png" />
+    <Content Include="assets\plugins\iCheck\skins\flat\_all.css" />
+    <Content Include="assets\plugins\iCheck\skins\futurico\futurico%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\futurico\futurico.css" />
+    <Content Include="assets\plugins\iCheck\skins\futurico\futurico.png" />
+    <Content Include="assets\plugins\iCheck\skins\line\aero.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\blue.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\green.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\grey.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\line%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\line\line.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\line.png" />
+    <Content Include="assets\plugins\iCheck\skins\line\orange.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\pink.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\purple.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\red.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\yellow.css" />
+    <Content Include="assets\plugins\iCheck\skins\line\_all.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\aero%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\aero.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\aero.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\blue%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\blue.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\blue.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\green%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\green.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\green.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\grey%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\grey.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\grey.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\minimal%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\minimal.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\minimal.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\orange%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\orange.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\orange.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\pink%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\pink.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\pink.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\purple%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\purple.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\purple.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\red%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\red.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\red.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\yellow%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\yellow.css" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\yellow.png" />
+    <Content Include="assets\plugins\iCheck\skins\minimal\_all.css" />
+    <Content Include="assets\plugins\iCheck\skins\polaris\polaris%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\polaris\polaris.css" />
+    <Content Include="assets\plugins\iCheck\skins\polaris\polaris.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\aero%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\aero.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\aero.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\blue%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\blue.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\blue.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\green%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\green.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\green.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\grey%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\grey.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\grey.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\orange%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\orange.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\orange.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\pink%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\pink.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\pink.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\purple%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\purple.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\purple.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\red%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\red.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\red.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\square%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\square.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\square.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\yellow%402x.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\yellow.css" />
+    <Content Include="assets\plugins\iCheck\skins\square\yellow.png" />
+    <Content Include="assets\plugins\iCheck\skins\square\_all.css" />
+    <Content Include="assets\plugins\layer\extend\layer.ext.js" />
+    <Content Include="assets\plugins\layer\layer.js" />
+    <Content Include="assets\plugins\layer\skin\default\icon-ext.png" />
+    <Content Include="assets\plugins\layer\skin\default\icon.png" />
+    <Content Include="assets\plugins\layer\skin\default\loading-0.gif" />
+    <Content Include="assets\plugins\layer\skin\default\loading-1.gif" />
+    <Content Include="assets\plugins\layer\skin\default\loading-2.gif" />
+    <Content Include="assets\plugins\layer\skin\layer.css" />
+    <Content Include="assets\plugins\layer\skin\layer.ext.css" />
+    <Content Include="assets\plugins\metisMenu\jquery.metisMenu.js" />
+    <Content Include="assets\plugins\pace\pace.min.js" />
+    <Content Include="assets\plugins\select2\css\select2.css" />
+    <Content Include="assets\plugins\select2\css\select2.min.css" />
+    <Content Include="assets\plugins\select2\js\i18n\ar.js" />
+    <Content Include="assets\plugins\select2\js\i18n\az.js" />
+    <Content Include="assets\plugins\select2\js\i18n\bg.js" />
+    <Content Include="assets\plugins\select2\js\i18n\ca.js" />
+    <Content Include="assets\plugins\select2\js\i18n\cs.js" />
+    <Content Include="assets\plugins\select2\js\i18n\da.js" />
+    <Content Include="assets\plugins\select2\js\i18n\de.js" />
+    <Content Include="assets\plugins\select2\js\i18n\el.js" />
+    <Content Include="assets\plugins\select2\js\i18n\en.js" />
+    <Content Include="assets\plugins\select2\js\i18n\es.js" />
+    <Content Include="assets\plugins\select2\js\i18n\et.js" />
+    <Content Include="assets\plugins\select2\js\i18n\eu.js" />
+    <Content Include="assets\plugins\select2\js\i18n\fa.js" />
+    <Content Include="assets\plugins\select2\js\i18n\fi.js" />
+    <Content Include="assets\plugins\select2\js\i18n\fr.js" />
+    <Content Include="assets\plugins\select2\js\i18n\gl.js" />
+    <Content Include="assets\plugins\select2\js\i18n\he.js" />
+    <Content Include="assets\plugins\select2\js\i18n\hi.js" />
+    <Content Include="assets\plugins\select2\js\i18n\hr.js" />
+    <Content Include="assets\plugins\select2\js\i18n\hu.js" />
+    <Content Include="assets\plugins\select2\js\i18n\id.js" />
+    <Content Include="assets\plugins\select2\js\i18n\is.js" />
+    <Content Include="assets\plugins\select2\js\i18n\it.js" />
+    <Content Include="assets\plugins\select2\js\i18n\ja.js" />
+    <Content Include="assets\plugins\select2\js\i18n\km.js" />
+    <Content Include="assets\plugins\select2\js\i18n\ko.js" />
+    <Content Include="assets\plugins\select2\js\i18n\lt.js" />
+    <Content Include="assets\plugins\select2\js\i18n\lv.js" />
+    <Content Include="assets\plugins\select2\js\i18n\mk.js" />
+    <Content Include="assets\plugins\select2\js\i18n\ms.js" />
+    <Content Include="assets\plugins\select2\js\i18n\nb.js" />
+    <Content Include="assets\plugins\select2\js\i18n\nl.js" />
+    <Content Include="assets\plugins\select2\js\i18n\pl.js" />
+    <Content Include="assets\plugins\select2\js\i18n\pt-BR.js" />
+    <Content Include="assets\plugins\select2\js\i18n\pt.js" />
+    <Content Include="assets\plugins\select2\js\i18n\ro.js" />
+    <Content Include="assets\plugins\select2\js\i18n\ru.js" />
+    <Content Include="assets\plugins\select2\js\i18n\sk.js" />
+    <Content Include="assets\plugins\select2\js\i18n\sr-Cyrl.js" />
+    <Content Include="assets\plugins\select2\js\i18n\sr.js" />
+    <Content Include="assets\plugins\select2\js\i18n\sv.js" />
+    <Content Include="assets\plugins\select2\js\i18n\th.js" />
+    <Content Include="assets\plugins\select2\js\i18n\tr.js" />
+    <Content Include="assets\plugins\select2\js\i18n\uk.js" />
+    <Content Include="assets\plugins\select2\js\i18n\vi.js" />
+    <Content Include="assets\plugins\select2\js\i18n\zh-CN.js" />
+    <Content Include="assets\plugins\select2\js\i18n\zh-TW.js" />
+    <Content Include="assets\plugins\select2\js\select2.full.js" />
+    <Content Include="assets\plugins\select2\js\select2.full.min.js" />
+    <Content Include="assets\plugins\select2\js\select2.js" />
+    <Content Include="assets\plugins\select2\js\select2.min.js" />
+    <Content Include="assets\plugins\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="assets\plugins\tagEditor\demo.html" />
+    <Content Include="assets\plugins\tagEditor\jquery.caret.min.js" />
+    <Content Include="assets\plugins\tagEditor\jquery.tag-editor.css" />
+    <Content Include="assets\plugins\tagEditor\jquery.tag-editor.js" />
+    <Content Include="assets\plugins\tagEditor\jquery.tag-editor.min.js" />
+    <Content Include="assets\plugins\toastr\toastr.min.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\anchor\anchor.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\attachment.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\attachment.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\attachment.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\alignicon.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\bg.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\file-icons.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\icons.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\icons.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\image.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\progress.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\success.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\attachment\images\success.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\background\background.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\background\background.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\background\background.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\background\images\bg.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\background\images\success.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\chart.config.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\charts.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\charts.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\charts.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\images\charts0.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\images\charts1.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\images\charts2.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\images\charts3.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\images\charts4.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\charts\images\charts5.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\emotion.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\emotion.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\emotion.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\0.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\gmap\gmap.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\help\help.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\help\help.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\help\help.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\image.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\image.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\image.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\alignicon.jpg" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\bg.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\icons.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\icons.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\image.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\progress.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\success.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\image\images\success.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\insertframe\insertframe.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\internal.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\link\link.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\map\map.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\map\show.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\music\music.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\music\music.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\music\music.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\preview\preview.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\addimg.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\brush.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\delimg.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\empty.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\eraser.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\redo.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\redoH.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\scale.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\size.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\undo.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\images\undoH.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\scrawl.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\scrawl.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\scrawl\scrawl.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\spechars\spechars.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\spechars\spechars.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\table\dragicon.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\table\edittable.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\table\edittable.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\table\edittable.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\table\edittd.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\table\edittip.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\config.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\images\bg.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\images\pre0.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\images\pre1.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\images\pre2.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\images\pre3.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\images\pre4.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\template.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\template.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\template\template.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\bg.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\file-icons.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\file-icons.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\icons.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\icons.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\image.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\progress.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\success.gif" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\images\success.png" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\video.css" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\video.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\video\video.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\webapp\webapp.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="assets\plugins\ueditor\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="assets\plugins\ueditor\dialogs\wordimage\tangram.js" />
+    <Content Include="assets\plugins\ueditor\dialogs\wordimage\wordimage.html" />
+    <Content Include="assets\plugins\ueditor\dialogs\wordimage\wordimage.js" />
+    <Content Include="assets\plugins\ueditor\index.html" />
+    <Content Include="assets\plugins\ueditor\lang\en\en.js" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\addimage.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\background.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\button.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\copy.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\deletedisable.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\deleteenable.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\listbackground.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\localimage.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\music.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="assets\plugins\ueditor\lang\en\images\upload.png" />
+    <Content Include="assets\plugins\ueditor\lang\zh-cn\images\copy.png" />
+    <Content Include="assets\plugins\ueditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="assets\plugins\ueditor\lang\zh-cn\images\music.png" />
+    <Content Include="assets\plugins\ueditor\lang\zh-cn\images\upload.png" />
+    <Content Include="assets\plugins\ueditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="assets\plugins\ueditor\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="assets\plugins\ueditor\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="assets\plugins\ueditor\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="assets\plugins\ueditor\net\net.sln" />
+    <Content Include="assets\plugins\ueditor\net\upload\image\20170301\6362398301554616501123522.jpg" />
+    <Content Include="assets\plugins\ueditor\net\upload\image\20170301\6362398368972072556197435.jpg" />
+    <Content Include="assets\plugins\ueditor\themes\default\css\ueditor.css" />
+    <Content Include="assets\plugins\ueditor\themes\default\css\ueditor.min.css" />
+    <Content Include="assets\plugins\ueditor\themes\default\dialogbase.css" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\anchor.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\arrow.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\arrow_down.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\arrow_up.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\button-bg.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\cancelbutton.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\charts.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\cursor_h.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\cursor_h.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\cursor_v.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\cursor_v.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\dialog-title-bg.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\filescan.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\highlighted.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\icons-all.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\icons.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\icons.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\loaderror.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\loading.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\lock.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\pagebreak.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\scale.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\sortable.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\spacer.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\sparator_v.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\table-cell-align.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\toolbar_bg.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\unhighlighted.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\upload.png" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\videologo.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\word.gif" />
+    <Content Include="assets\plugins\ueditor\themes\default\images\wordpaste.png" />
+    <Content Include="assets\plugins\ueditor\themes\iframe.css" />
+    <Content Include="assets\plugins\ueditor\third-party\codemirror\codemirror.css" />
+    <Content Include="assets\plugins\ueditor\third-party\codemirror\codemirror.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\highcharts-more.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\highcharts.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\highcharts.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\annotations.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\data.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\data.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\exporting.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\funnel.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\map.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\map.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\themes\gray.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\themes\grid.js" />
+    <Content Include="assets\plugins\ueditor\third-party\highcharts\themes\skies.js" />
+    <Content Include="assets\plugins\ueditor\third-party\jquery-1.10.2.js" />
+    <Content Include="assets\plugins\ueditor\third-party\jquery-1.10.2.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="assets\plugins\ueditor\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="assets\plugins\ueditor\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\font\vjs.svg" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\video-js.css" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\video-js.min.css" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\video-js.swf" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\video.dev.js" />
+    <Content Include="assets\plugins\ueditor\third-party\video-js\video.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\Uploader.swf" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.css" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="assets\plugins\ueditor\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\xss.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="assets\plugins\ueditor\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="assets\plugins\ueditor\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="assets\plugins\ueditor\ueditor.all.js" />
+    <Content Include="assets\plugins\ueditor\ueditor.all.min.js" />
+    <Content Include="assets\plugins\ueditor\ueditor.parse.js" />
+    <Content Include="assets\plugins\ueditor\ueditor.parse.min.js" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\emotion.css" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\emotion.js" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\0.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\bface.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\cface.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\fface.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\tface.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\wface.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\emotion\images\yface.gif" />
+    <Content Include="assets\plugins\umeditor\dialogs\formula\formula.css" />
+    <Content Include="assets\plugins\umeditor\dialogs\formula\formula.html" />
+    <Content Include="assets\plugins\umeditor\dialogs\formula\formula.js" />
+    <Content Include="assets\plugins\umeditor\dialogs\formula\images\formula.png" />
+    <Content Include="assets\plugins\umeditor\dialogs\image\image.css" />
+    <Content Include="assets\plugins\umeditor\dialogs\image\image.js" />
+    <Content Include="assets\plugins\umeditor\dialogs\image\images\close.png" />
+    <Content Include="assets\plugins\umeditor\dialogs\image\images\upload1.png" />
+    <Content Include="assets\plugins\umeditor\dialogs\image\images\upload2.png" />
+    <Content Include="assets\plugins\umeditor\dialogs\link\link.js" />
+    <Content Include="assets\plugins\umeditor\dialogs\map\map.html" />
+    <Content Include="assets\plugins\umeditor\dialogs\map\map.js" />
+    <Content Include="assets\plugins\umeditor\dialogs\video\images\center_focus.jpg" />
+    <Content Include="assets\plugins\umeditor\dialogs\video\images\left_focus.jpg" />
+    <Content Include="assets\plugins\umeditor\dialogs\video\images\none_focus.jpg" />
+    <Content Include="assets\plugins\umeditor\dialogs\video\images\right_focus.jpg" />
+    <Content Include="assets\plugins\umeditor\dialogs\video\video.css" />
+    <Content Include="assets\plugins\umeditor\dialogs\video\video.js" />
+    <Content Include="assets\plugins\umeditor\index.html" />
+    <Content Include="assets\plugins\umeditor\lang\en\en.js" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\addimage.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\background.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\button.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\copy.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\deletedisable.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\deleteenable.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\imglabel.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\listbackground.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\localimage.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\music.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\rotateleftdisable.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\rotateleftenable.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\rotaterightdisable.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\rotaterightenable.png" />
+    <Content Include="assets\plugins\umeditor\lang\en\images\upload.png" />
+    <Content Include="assets\plugins\umeditor\lang\zh-cn\images\copy.png" />
+    <Content Include="assets\plugins\umeditor\lang\zh-cn\images\imglabel.png" />
+    <Content Include="assets\plugins\umeditor\lang\zh-cn\images\localimage.png" />
+    <Content Include="assets\plugins\umeditor\lang\zh-cn\images\music.png" />
+    <Content Include="assets\plugins\umeditor\lang\zh-cn\images\upload.png" />
+    <Content Include="assets\plugins\umeditor\lang\zh-cn\zh-cn.js" />
+    <Content Include="assets\plugins\umeditor\net\upload\2017-01-20\ae02404f-b560-4c6a-824a-ac2198734fc4.jpg" />
+    <Content Include="assets\plugins\umeditor\net\upload\2017-01-20\eeaae0dd-cb78-4af5-9b33-b4e77e6f3bd6.jpg" />
+    <Content Include="assets\plugins\umeditor\themes\default\css\umeditor.css" />
+    <Content Include="assets\plugins\umeditor\themes\default\css\umeditor.min.css" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\caret.png" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\close.png" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\icons.gif" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\icons.png" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\ok.gif" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\pop-bg.png" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\spacer.gif" />
+    <Content Include="assets\plugins\umeditor\themes\default\images\videologo.gif" />
+    <Content Include="assets\plugins\umeditor\third-party\jquery.min.js" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\STIXFontLicense2010.txt" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneral-webfont.svg" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbol-webfont.svg" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralbolita-webfont.svg" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\stixgeneral-bundle\stixgeneralitalic-webfont.svg" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\font\Symbola.svg" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\mathquill.css" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\mathquill.js" />
+    <Content Include="assets\plugins\umeditor\third-party\mathquill\mathquill.min.js" />
+    <Content Include="assets\plugins\umeditor\umeditor.config.js" />
+    <Content Include="assets\plugins\umeditor\umeditor.js" />
+    <Content Include="assets\plugins\umeditor\umeditor.min.js" />
+    <Content Include="assets\plugins\validate\jquery.metadata.js" />
+    <Content Include="assets\plugins\validate\jquery.validate.js" />
+    <Content Include="assets\plugins\validate\jquery.validate.min.js" />
+    <Content Include="assets\plugins\validate\messages_zh.js" />
+    <Content Include="assets\plugins\validate\messages_zh.min.js" />
+    <Content Include="assets\plugins\zTree\css\awesomeStyle\awesome.css" />
+    <Content Include="assets\plugins\zTree\css\awesomeStyle\img\loading.gif" />
+    <Content Include="assets\plugins\zTree\css\demo.css" />
+    <Content Include="assets\plugins\zTree\css\metroStyle\img\line_conn.png" />
+    <Content Include="assets\plugins\zTree\css\metroStyle\img\loading.gif" />
+    <Content Include="assets\plugins\zTree\css\metroStyle\img\metro.gif" />
+    <Content Include="assets\plugins\zTree\css\metroStyle\img\metro.png" />
+    <Content Include="assets\plugins\zTree\css\metroStyle\metroStyle.css" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\1_close.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\1_open.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\2.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\3.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\4.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\5.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\6.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\7.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\8.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\diy\9.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\line_conn.gif" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\loading.gif" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\zTreeStandard.gif" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\img\zTreeStandard.png" />
+    <Content Include="assets\plugins\zTree\css\zTreeStyle\zTreeStyle.css" />
+    <Content Include="assets\plugins\zTree\js\jquery-1.4.4.min.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.all.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.all.min.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.core.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.core.min.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.excheck.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.excheck.min.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.exedit.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.exedit.min.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.exhide.js" />
+    <Content Include="assets\plugins\zTree\js\jquery.ztree.exhide.min.js" />
+    <Content Include="config\blogMenu.aspx" />
+    <Content Include="config\blogMenuAdd.aspx" />
+    <Content Include="config\IndexManage.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="index.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="main.aspx" />
+    <Content Include="system\power.aspx" />
+    <Content Include="system\userAdd.aspx" />
+    <Content Include="system\userList.aspx" />
+    <Content Include="system\userTypeAdd.aspx" />
+    <Content Include="system\userTypeList.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ajax\Article.ashx.cs">
+      <DependentUpon>Article.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ajax\Common.ashx.cs">
+      <DependentUpon>Common.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ajax\Config.ashx.cs">
+      <DependentUpon>Config.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ajax\Upload.ashx.cs">
+      <DependentUpon>Upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ajax\User.ashx.cs">
+      <DependentUpon>User.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="articleManage\articleAdd.aspx.cs">
+      <DependentUpon>articleAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articleManage\articleAdd.aspx.designer.cs">
+      <DependentUpon>articleAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articleManage\articleList.aspx.cs">
+      <DependentUpon>articleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articleManage\articleList.aspx.designer.cs">
+      <DependentUpon>articleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articleManage\categoryAdd.aspx.cs">
+      <DependentUpon>categoryAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articleManage\categoryAdd.aspx.designer.cs">
+      <DependentUpon>categoryAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="articleManage\categoryList.aspx.cs">
+      <DependentUpon>categoryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="articleManage\categoryList.aspx.designer.cs">
+      <DependentUpon>categoryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="assets\plugins\ueditor\net\App_Code\Config.cs" />
+    <Compile Include="assets\plugins\ueditor\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="assets\plugins\ueditor\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="assets\plugins\ueditor\net\App_Code\Handler.cs" />
+    <Compile Include="assets\plugins\ueditor\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="assets\plugins\ueditor\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="assets\plugins\ueditor\net\App_Code\PathFormater.cs" />
+    <Compile Include="assets\plugins\ueditor\net\App_Code\UploadHandler.cs" />
+    <Compile Include="assets\plugins\umeditor\net\imageUp.ashx.cs">
+      <DependentUpon>imageUp.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="assets\plugins\umeditor\net\Uploader.cs" />
+    <Compile Include="baseClass\BaseAshx.ashx.cs">
+      <DependentUpon>BaseAshx.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="baseClass\BasicPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="config\blogMenu.aspx.cs">
+      <DependentUpon>blogMenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="config\blogMenu.aspx.designer.cs">
+      <DependentUpon>blogMenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="config\blogMenuAdd.aspx.cs">
+      <DependentUpon>blogMenuAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="config\blogMenuAdd.aspx.designer.cs">
+      <DependentUpon>blogMenuAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="config\IndexManage.aspx.cs">
+      <DependentUpon>IndexManage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="config\IndexManage.aspx.designer.cs">
+      <DependentUpon>IndexManage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="main.aspx.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="main.aspx.designer.cs">
+      <DependentUpon>main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="system\power.aspx.cs">
+      <DependentUpon>power.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="system\power.aspx.designer.cs">
+      <DependentUpon>power.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="system\userAdd.aspx.cs">
+      <DependentUpon>userAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="system\userAdd.aspx.designer.cs">
+      <DependentUpon>userAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="system\userList.aspx.cs">
+      <DependentUpon>userList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="system\userList.aspx.designer.cs">
+      <DependentUpon>userList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="system\userTypeAdd.aspx.cs">
+      <DependentUpon>userTypeAdd.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="system\userTypeAdd.aspx.designer.cs">
+      <DependentUpon>userTypeAdd.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="system\userTypeList.aspx.cs">
+      <DependentUpon>userTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="system\userTypeList.aspx.designer.cs">
+      <DependentUpon>userTypeList.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utility\Utility.csproj">
+      <Project>{5a173cad-7dc0-4652-bc1f-69f09dbe7dc3}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>13818</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:13789/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>此项目引用这台计算机上缺少的 NuGet 程序包。使用 NuGet 程序包还原可下载这些程序包。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
