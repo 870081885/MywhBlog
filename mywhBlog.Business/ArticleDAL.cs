@@ -93,7 +93,7 @@ namespace mywhBlog.Business
             //上下一篇
             strSql = @"select * from  (select top 1 1 type,id articleId,title from tb_article where id<@articleId and status=1)t1
                            UNION all
-                           select * from  (select top 2  2 type,id articleId,title from tb_article where id>@articleId and status=1)t2";
+                           select * from  (select top 1  2 type,id articleId,title from tb_article where id>@articleId and status=1)t2";
             dt = Utility.SqlHelper.GetDataTable(strSql, param);
             result.obj3 = dt;
 
