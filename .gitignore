@@ -1,0 +1,14 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/mywhBlog/bin
+/mywhBlog/obj/Debug
+/mywhBlog.Business/bin/Debug
+/Utility/bin/Debug
+/Utility/obj/Debug
+/mywhBlog.Entity/bin/Debug
+/mywhBlog.Entity/obj/Debug
+/mywhBlog.Business/obj/Debug
+/mywhBlog.Test/obj/Debug
+/blogManage/obj
